@@ -103,6 +103,10 @@ This predictive analysis matters because it provides insight into how different 
 
 ---
 
-## Tableau Packaged Workbook
-The Tableau packaged workbook (**Real_Estate_CT_Analysis.twbx**) is included in this repository and contains all visualizations referenced above.
+## Tableau Files
 
+The Tableau workbook files for my Honors Option question, graphs, and analysis can be accessed here:
+
+🔗 **Google Drive Folder:** [Click to view](https://drive.google.com/drive/folders/1tVRZZ-X5Bth8SQTVoCTCEUGLIRtRb3zl?usp=sharing)
+
+These files are larger than GitHub’s 25MB limit, so they are hosted externally.
