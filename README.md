@@ -1,134 +1,108 @@
-# mist4610groupproject2
+# mist4610-project2-group-7
 
-Team Name and Members:
+## Team Name:
+15058 Group 7
 
-Audrey Staples - https://github.com/audreystaples/mist4620groupproject2/blob/main/README.md
+## Team Members:
+1. Tyler Schildkraut [@tylerschildkraut](https://github.com/tylerschildkraut)
+2. Angela Ren [@angelaaa456](https://github.com/angelaaa456)
+3. Sammy Effron [@seffron](https://github.com/seffron)
+4. Audrey Staples [@audreystaples](https://github.com/audreystaples)
+5. Tanner Sutherland [@tannersutherland](https://github.com/tannersutherland)
 
-Angela Ren 
-
-Tanner Sutherland - https://github.com/tannersutherland/mist4610groupproject2
-
-Sam Effron -  https://github.com/Seffron/mist4610groupproject2/blob/main/README.md
-
-Tyler Schildkraut - https://github.com/tylerschildkraut/mist4610-project2-group-7/blob/acc29045db06734eb6b9771adb96c690a8286c20/README.md 
-
-
-Database Description:
-
+## Data Set Overview
 We chose the data model title Real Estate Sales 2001-2023 GL. Specifically, our data was collected from the state of Connecticut and we have narrowed our focus more specifically on the past decade or so of housing prices. It included exactly 1,141,722 rows of values along with 14 columns in total so we really wanted to make sure we narrowed down our filters and the scope of our analysis. The reason we chose this data set was because we were curious about trends in recent years as the housing market is always a great indicator of market health. Additionally, our data set is rich in values that people can understand. Some of the most relevant data we were able to get plenty of information on were the following: Serial Number, List Year, Town, Address, Assessed Value, Sale Amount, Sales Ratio, Property Type, and Residential Type. Other data included in the database included Date Recorded, Non Use Code, Assessor Remarks, OPM Remarks, and Location. However, we made the decision to not include analysis of these values because they were redundant, not extremely intuitive, and we found we could provide better insights using other data points specified in the model. Serial Number (whole number data type) specifies the unique label placed on each individual house in the state of Connecticut. List Year (whole number data type) specifies the year the house was listed on the market and Data Recorded (date data type) is the specific date the property was registered under a specific mortgage/deed. Town (string data type) and Address (string data type) included information about where the house was located. Assessed Value (decimal number data type) and Sales Amount (decimal number data type) allowed us to examine the difference between what the value of the house was assessed to be by appraisers versus the amount the house actually sold for on the market. The Sales Ratio (decimal number data type) provides a specific ratio that details the discrepancies between Assessed Value and Sales Amount. For example, a ratio below 1.0 would be indicative of a property being under-assessed versus a ratio above 1.00 indicating the property is being over-assessed. Property Type (string data type) indicates the specific property type (Residential, Commercial, Vacant Land, etc.). Residential Type (string data type) specifies the specific residential property type given that the property is considered Residential (Single Family, Two Family, Condo, etc.). Non-Use Code (string data type) specifies information regarding a property if it was regarded as not conforming property contractual obligations. Assessor Remarks (string data type) specifies official remarks given by a property assessor for tax purposes, and OPM Remarks (string data type) includes information regarding if a property was financed by an outside source other than the purchaser’s own funds. Lastly, Location (string data type) provides the exact GPS coordinates of a specific property.
 
-Question 1: How did average prices across Connecticut towns change from 2018–2023, especially during and after the COVID-19 housing surge?
 
+---
 
-Explanation: We wanted to examine the periods leading up to and after the COVID-19 pandemic to examine housing trends and if we could draw any insights given the data. It is known that during the pandemic, interest rates significantly decreased which aimed to stimulate economic growth overall, subsequently spurring growth in the housing market in the process. We want to see if this would be reflected in the data we measured in Connecticut.
+## Question 1: Analytical  
+**How did average prices across Connecticut towns change from 2018–2023, especially during and after the COVID-19 housing surge?**
 
-Manipulations:\
-<img width="492" height="402" alt="Screenshot 2025-11-21 at 1 56 41 PM" src="https://github.com/user-attachments/assets/0fa6d633-2ca3-4044-a1eb-544495e2498d" />
+This question is important because the 2018–2023 period captures one of the most significant housing market disruptions in modern history. COVID-19 triggered sudden migration shifts, remote work arrangements, historically low interest rates, and widespread inventory shortages, all of which dramatically altered housing demand. Analyzing how prices evolved across towns provides insight into which markets were most affected and how different parts of the state responded to the same macroeconomic shock. Understanding these uneven effects is valuable for policymakers, real estate professionals, and researchers interested in long-term affordability trends.
 
-Visualizes the full spread of price growth across all 169 Connecticut towns, providing statewide context for our analysis.\
-The median CT town grew ~45%, indicating broad but moderate appreciation between 2018–2023.\
-The interquartile range (IQR) shows most towns clustered between ~20% and ~70% growth, reflecting common market conditions.\
-We chose the top 10 because they’re the towns with the strongest growth trends — and the statewide distribution validates that these towns truly behaved differently.”\
-Several top-performing towns (highlighted in blue) stand far above the statewide distribution, with growth between 150%–325%, confirming how uneven the COVID-era surge was.\
-Highlights that the top 10 fastest-growing towns experienced 3–6× the typical growth, driving much of the statewide housing boom.
+To begin the analysis, we calculated the percentage change in average sale amounts for each of Connecticut’s 169 towns between 2018 and 2023. This statewide distribution provides context for evaluating both typical and extreme growth patterns. We then isolated the top 10 fastest-growing towns to examine how their behavior differed from the statewide norm. By pairing bar charts, line charts, and geographic maps, we were able to analyze not only overall growth but also year-over-year momentum and pre- vs. post-COVID differences.
 
+### Plot 1: Statewide Price Growth Distribution  
+![plot](./Question1_Boxwhiskerplot.png)
 
-<img width="538" height="474" alt="Screenshot 2025-11-21 at 1 59 53 PM" src="https://github.com/user-attachments/assets/5d6e3269-8153-4bee-9ca5-3f293b1cde79" />
+**Description and Results:**  
+The statewide box-and-whisker plot shows that the median town in Connecticut grew approximately 45% between 2018 and 2023, while most towns fell between 20% and 70% growth. However, the plot also highlights a set of extreme outliers—towns that grew between 150% and 325%. These high-growth towns stand far above the statewide distribution and reveal how unevenly the COVID housing boom affected the state. While most towns experienced moderate appreciation, a select group surged at three to six times the typical rate. This validates the decision to examine the top 10 towns individually, as they represent fundamentally different market behavior.
 
-Focuses on the top 10 CT towns with the highest property price growth from 2018–2023, filtered from a full dataset of 169 towns for clearer interpretation/
-Reveals strong variation across high-growth towns, indicating an uneven and shifting housing landscape/
-High-growth areas (e.g., Windsor, Franklin) suggest strong demand, limited inventory, or intensified COVID-era in-migration/
-Helps identify which local markets experienced the sharpest heating-up trends during the 2018–2023 period
+### Plot 2: Top 10 Fastest-Growing Towns  
+!![plot](./Question1_Graph1.png)
 
-<img width="282" height="263" alt="Screenshot 2025-11-21 at 2 01 19 PM" src="https://github.com/user-attachments/assets/957eccc0-e77d-4516-878c-ca3c0c50c423" />
+**Description and Results:**  
+This bar chart highlights the towns with the largest percentage increases in average sale price. The dramatic variation across these towns suggests that certain local markets experienced intense demand pressure, limited inventory, or strong in-migration during the COVID period. Towns like Windsor and Franklin reflect the strongest growth, and many of these towns had relatively low price baselines, which magnified percentage increases. Their growth patterns suggest structural shifts in buyer preferences during COVID, including moves toward more affordable or less densely populated areas.
 
-Visualizes year-over-year changes in average sale prices (2018–2023) for the top 10 fastest-growing CT towns, filtered from all 169 towns for clarity\
-Complements the previous bar chart by revealing how and when each top-growth town experienced its appreciation\
-Highlights differences in momentum: some towns show sustained multi-year acceleration, while others spike later in the period\
-Helps distinguish market behavior patterns across high-growth towns (e.g., rapid post-COVID run-ups vs. steady long-term appreciation)
+### Plot 3: Year-over-Year Price Trends  
+!![plot](./Question1_Graph2.png)
 
-<img width="323" height="204" alt="Screenshot 2025-11-21 at 2 02 20 PM" src="https://github.com/user-attachments/assets/6d2c8e94-2f07-43fc-843a-a32de28bf0fd" />
+**Description and Results:**  
+The year-over-year line chart provides insight into how each top-growth town achieved its total gain. Some towns experienced steady multi-year increases, while others surged almost entirely during COVID (2020–2022). The visual difference in trajectories across towns shows that the ways in which markets heated up varied substantially. For example, some towns accelerated sharply in 2021 when demand and migration peaked, while others had been trending upward even before the pandemic. By 2023, many top-growth towns began to show signs of cooling, reflecting both interest rate increases and a normalization of post-COVID housing conditions.
 
-Shows average sale prices in each town before COVID (2018–early 2020).\
-Prices more consistent across towns.\
-Only a few gaps exist between higher-value and lower-value towns.\
-This period represents the baseline before the major COVID-era market surge.\
+### Plot 4: Pre-COVID Price Map  
+!![plot](./Question1_Graph3.png)
 
-<img width="336" height="230" alt="Screenshot 2025-11-21 at 2 02 46 PM" src="https://github.com/user-attachments/assets/b657081b-70a5-480c-b72e-315226c5ce20" />
+### Plot 5: Post-COVID Price Map  
+!![plot](./Question1_Graph4.png)
 
-Displays average sale prices in each town after COVID began (2020–2023).\
-Nearly all towns show some price increases compared to pre-COVID.\
-Differences between towns become more pronounced, with some markets accelerating faster.\
-Highlights the pandemic-driven demand spike that in Connecticut’s housing market.
+**Description and Results:**  
+Before COVID, Connecticut’s towns displayed relatively balanced pricing, with smaller gaps between affordable and high-value markets. Only a few towns stood noticeably above the statewide baseline. This map represents the final “normal” snapshot before the surge. Post-COVID, nearly all towns experienced price increases, but the degree of growth differed significantly. Several markets became substantially more expensive relative to others, reflecting new migration patterns and demand concentrations. The wider spread of price levels across the map reflects the heightened regional disparities that emerged during COVID.
 
+**Analysis and Helpfulness of Results:**  
+The combined analyses reveal that Connecticut’s housing market underwent major structural changes from 2018–2023. The fastest acceleration occurred during 2020–2022, aligning with national patterns of migration and historically low mortgage rates. Lower-priced towns saw the largest percentage increases due to affordability and increased relative demand, while higher-priced towns saw strong dollar increases but smaller percent changes. By 2023, the market began to diverge, with some towns cooling and others continuing upward. These trends illustrate how COVID-era dynamics reshaped Connecticut’s housing landscape and amplified differences between typical markets and high-growth outliers.
 
-Analysis:
+---
 
-Home prices rose statewide from 2018–2023, with the sharpest increases during the COVID surge (2020–2022).\
-Growth was uneven, with some towns appreciating far more rapidly than others.\
-Lower-priced towns (e.g., Windsor, Canaan) saw the biggest percent gains, driven by low starting prices and strong COVID-era demand.\
-Higher-priced towns (e.g., Washington, Salisbury) saw large dollar gains, but smaller percent increases due to the base effect.\
-Most price jumps occurred between 2020–2022, while 2023 shows mixed cooling or continued growth depending on the town.\
-Overall trends reflect COVID migration, remote work, and limited inventory—especially boosting rural and mid-market towns.
+## Question 2: Explanatory  
+**On average, have assessed values kept pace with actual sale prices from 2018–2023, and which property types show the largest valuation gaps?**
+This question is crucial because assessed values play a central role in municipal budgeting, tax equity, and fair property taxation. When assessments lag behind market conditions—particularly during periods of rapid appreciation—governments may under-collect revenue, long-term residents may pay disproportionately low taxes relative to new buyers, and municipalities may face budgetary pressures. Understanding which property types and towns exhibit the largest valuation gaps helps identify structural issues in the assessment system.
 
+We analyzed median assessed values and median actual sale prices for major property categories from 2018–2023. We also created maps to visualize assessment accuracy across towns for commercial and residential properties.
 
-Question 2: On average, have assessed values kept pace with actual sale prices from 2018–2023, and which property types show the largest valuation gaps?
+### Plot 1: Median Assessed Value by Property Type  
+!![plot](./Question2_Graph1.png)
 
-Explanation: This question narrowed in on the discrepancies between sale prices and assessed values during this time. It is important to understand this question because valuation gaps can effect tax assessment, housing affordability, and local revenue planning.
+### Plot 2: Median Actual Sale Price by Property Type  
+!![plot](./Question2_Graph2.png)
 
-Manipulations:
+**Description and Results:**  
+These graphs show a clear and consistent trend: assessed values did not keep pace with sale prices for most property types during this period. Apartments and industrial properties showed some of the largest gaps. Apartments, for example, had a median assessed value of approximately $269,000 but a median sale price near $538,000—indicating a significant undervaluation. Industrial properties were undervalued by nearly $300,000 on average. The only property type that appeared slightly over-assessed was public utility property, making it an outlier in the dataset.
 
-<img width="286" height="256" alt="Screenshot 2025-11-21 at 2 04 56 PM" src="https://github.com/user-attachments/assets/0bf390a8-f1d6-4be3-afcf-c5f16c61b811" />
+### Plot 3: Commercial Sales Ratio Map  
+!![plot](./Question2_Graph3.png)
 
+### Plot 4: Residential Sales Ratio Map  
+!![plot](./Question2_Graph4.png)
 
-This graph shows the median assessed value of real estate property based on different property types from 2018 to 2023 in Connecticut\
-The property types that are included in the graph are:\
-Apartment (Blue)\
-Commercial (Light Blue)\
-Condo (Orange)\
-Four Family (Peach)\
-Industrial (Green)\
-Public Utility (Light Green)\
-Residential (Gold)\
-Single Family (Yellow)\
-Three Family (Turquoise)\
-Two Family (Blue-Green)\
-Vacant Land (Red)
+**Description and Results:**  
+Both maps show widespread under-assessment across the state. Most towns appear in shades of red, signaling sales ratios below 1.0. Residential properties, in particular, were significantly under-assessed due to rapid COVID-era price increases that assessor updates could not match. Suburban and rural areas were especially affected, reflecting fast-changing demand patterns.
 
+**Analysis and Helpfulness of Results:**  
+Across nearly all property types and towns, assessed values lagged behind sale prices from 2018–2023. The gap was exacerbated during the COVID surge, when market prices rose faster than assessment cycles could adjust. This widespread undervaluation affects tax revenue accuracy and raises equity questions between long-term residents and newer buyers. The results demonstrate that Connecticut’s assessment system struggled to keep pace with rapid market changes, especially for residential and industrial properties.
 
-<img width="288" height="251" alt="Screenshot 2025-11-21 at 2 05 59 PM" src="https://github.com/user-attachments/assets/b24c1e4d-2bd5-4017-a997-7b9f864a5546" />
+---
 
-Compared to the last slide, the actual sale prices are generally higher than the assessed prices of each property\
-The median assessed price for apartments is $269,613, while the actual median sale price is nearly double at $538,000\
-This shows how the majority of properties are vastly undervalued from assessment date to sale date\
-The only outlier within the data is in the public utility property type\
-The assessed price is $69,775 while the sale price $44,500\
-This is the only property that was overvalued\
-The largest gap between assessed price and sale price is in the industrial property type\
-The assessed price is $426,230 while the sale price is $725,000\
-That’s nearly a $300,000 undervaluation\
+## Honors Question 3: Predictive  
+**“Based on year-over-year sales volume trends, which Connecticut towns are likely to have increasing housing demand in the next year?”**  
+*(Completed individually by Tyler Schildkraut for Honors Credit)*
 
-<img width="343" height="209" alt="Screenshot 2025-11-21 at 2 06 33 PM" src="https://github.com/user-attachments/assets/4d480c2e-e5c2-48db-916f-07d7af5d7c39" />
+For the honors extension, I conducted a predictive analysis using Tableau’s exponential smoothing forecast model. Sales volume is a direct measure of housing demand because it reflects the actual number of transactions occurring within a market. By focusing on the top 10 towns with the highest transaction volume from 2018–2023, we can identify which areas of the state are likely to become more competitive in the near future.
 
+### Forecast Visualization (2018–2025)  
+!![plot](./Question3_Graph1.png)
 
-This map plots average sales ratios for commercial sales across CT towns.\
-Sales Ratio = (Assessed Value / Sale Price) — values below 1 (red) mean the town under-assessed properties.\
-Most towns appear light to deep red, indicating commercial properties typically sell for more than their assessed values.\
-Under-assessment is strongest in suburban and rural areas, where sale prices rose faster than assessor updates.
+**Description and Results:**  
+TThe forecasting model suggests that Stamford, Bridgeport, and Waterbury are likely to experience increasing demand through 2024–2025. Stamford shows a strong rebound after a dip in 2022 and remains one of the most active markets in Connecticut. Bridgeport continues to exhibit steady growth and maintained high sales activity even during post-COVID normalization. Waterbury shows consistent upward momentum, with both historical and forecasted data pointing toward continued strength.
 
-<img width="348" height="219" alt="Screenshot 2025-11-21 at 2 07 02 PM" src="https://github.com/user-attachments/assets/a5f8ce53-4b00-4212-b904-599e1981a66b" />
+In contrast, Hamden, New Haven, and West Hartford appear to be stabilizing or cooling. New Haven peaked around 2021 and has since leveled off. West Hartford shows a clear downward trajectory in its forecast, indicating weakening demand relative to its pandemic peak.
 
+**Importance and Helpfulness:**  
+This predictive analysis matters because it provides insight into how different towns may evolve beyond 2023. Forecasting helps stakeholders anticipate emerging housing needs, identify which markets may become more competitive, and plan accordingly. It also reveals whether COVID-era trends are continuing or reversing. The results indicate that some traditionally strong markets (e.g., Stamford) may continue to grow, while others may be entering a cooling phase.
 
-Most towns appear deep red, meaning sales ratios are well below 1 meaning residential homes are significantly under-assessed relative to their sale prices.\
-Under-assessment is widespread because residential market values surged during COVID, while assessor updates lagged behind.\
-Indicates strong market demand pushed residential prices far above official assessed values from 2018–2023.
+---
 
-
-Analysis:
-
-Aside from the public utility outlier, it is safe to say that the assessed values of the real estate properties have not kept pace with the actual sale prices of those properties.\
-This is likely due to the increased interest rates from the Federal Reserve which increased prices in the real estate market.\
-As shown in the bar charts, the majority of average assessed prices for real estate in Connecticut from 2018-2023 were lower for property types then the actual sales price with the public utility property type being the exception.
-
-
+## Tableau Packaged Workbook
+The Tableau packaged workbook (**Real_Estate_CT_Analysis.twbx**) is included in this repository and contains all visualizations referenced above.
 
